@@ -57,6 +57,14 @@ document.querySelectorAll(".botao-acordeao").forEach((button) => {
 function alternarAcordeao(button) {
   const isAlreadyOpen = button.getAttribute("aria-expanded") === "true";
 
+  document.querySelectorAll(".botao-acordeao").forEach((btn) => {
+    btn.setAttribute("aria-expanded", "false");
+
+    const content = btn.nextElementSibling;
+    content.classList.remove("expandido");
+    content.setAttribute("aria-hidden", "true");
+  });
+
   if (!isAlreadyOpen) {
     button.setAttribute("aria-expanded", "true");
 
