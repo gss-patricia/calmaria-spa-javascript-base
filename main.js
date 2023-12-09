@@ -3,6 +3,14 @@ function alternarSubmenu(item, mostrar) {
 
   if (submenu) {
     submenu.style.display = mostrar ? "block" : "none";
+
+    const menuItem = item.querySelector(".cabecalho__lista-item a");
+    menuItem.setAttribute("aria-expanded", mostrar ? true : false);
+
+    const DropdownExpandedIcon = item.querySelector(
+      ".material-symbols-outlined.icone"
+    );
+    DropdownExpandedIcon.classList.toggle("active", mostrar);
   }
 }
 
