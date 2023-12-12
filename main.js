@@ -1,3 +1,5 @@
+let ultimoElementoFocado;
+
 function gerenciarFocoModal(modalId) {
   const modal = document.querySelector(`#${modalId}`);
   const elementosModal = modal.querySelectorAll(
@@ -34,10 +36,17 @@ function alternarModal(modalId, abrir) {
   const modal = document.querySelector(`#${modalId}`);
 
   if (abrir) {
+    // Armazena o elemento focado atualmente
+    ultimoElementoFocado = document.activeElement;
+
     modal.style.display = "block";
     gerenciarFocoModal(modalId);
   } else {
     modal.style.display = "none";
+
+    if (ultimoElementoFocado) {
+      ultimoElementoFocado.focus();
+    }
   }
 
   document.body.style.overflow = abrir ? "hidden" : "auto";
