@@ -240,7 +240,8 @@
 
         <div class="rodape-modal">
           <!-- Botão para fechar a janela modal 'ver-modal-contato' -->
-          <button class="btn-enviar" tabindex="0">
+          <button class="btn-enviar"
+            onclick="alternarModal('ver-modal-contato', false), alternarModal('ver-modal-enviado', true)" tabindex="0">
             Enviar
           </button>
         </div>
@@ -257,7 +258,8 @@
           </h2>
           <img class="cabecalho-icone-modal-enviado" src="./assets/icon-enviado.png" alt="" />
           <!-- Botão para fechar a janela modal 'ver-modal-enviado' contato-->
-          <button class="btn-fechar" tabindex="0" aria-label="Fechar formulário enviado">
+          <button class="btn-fechar" onclick="alternarModal('ver-modal-enviado', false)" tabindex="0"
+            aria-label="Fechar formulário enviado">
             Fechar
           </button>
         </div>
